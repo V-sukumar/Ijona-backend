@@ -9,9 +9,9 @@ postRouter.use(auth);
 
 postRouter.get("/", async(req,res) => {
     try{
-        const user=await postModel.find()
-        if(user){
-            res.status(200).json({user})
+        const customer=await postModel.find()
+        if(customer){
+            res.status(200).json({customer})
         }else{
             res.status(400).json({msg:"Post not Found"})
         }
@@ -21,7 +21,7 @@ postRouter.get("/", async(req,res) => {
 })
 
 
-postRouter.post("/customer", async(req,res) => {
+postRouter.post("/dashboard", async(req,res) => {
    try{
     console.log(req.body);
     const post = new postModel(req.body);
